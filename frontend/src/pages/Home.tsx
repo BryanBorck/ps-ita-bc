@@ -19,13 +19,13 @@ export default function Home({ account, signer }: { account: string | null; sign
             const tx = await NFTcontract.mint(account);
             await tx.wait();
             console.log("Minted successfully!");
-            navigator('/success');
         }
         catch(error){
             console.log(error);
         }
         finally{
             setLoading(false);
+            navigator('/success');
         }
     }
 

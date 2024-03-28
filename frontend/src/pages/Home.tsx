@@ -25,7 +25,9 @@ export default function Home({ account, signer }: { account: string | null; sign
         }
         finally{
             setLoading(false);
-            navigator('/success');
+            if(account) {
+                navigator('/success');
+            }
         }
     }
 
